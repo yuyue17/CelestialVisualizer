@@ -75,6 +75,7 @@ public class Body {
      * @param acc the calculated acceleration used to update this body
      */
     public void update(double elapsedTime, Vector2d acc) {
-        throw new edu.grinnell.celestialvisualizer.UnimplementedException("Body.update");
+    	this.position = this.position.translate(this.velocity.scale(elapsedTime));
+    	this.velocity = this.velocity.add(acc.scale(elapsedTime));
     }
 }
