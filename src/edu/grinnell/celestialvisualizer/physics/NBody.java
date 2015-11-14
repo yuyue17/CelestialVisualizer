@@ -44,10 +44,9 @@ public class NBody {
      * simulation.  The returned list should be the same size as the number
      * of bodies where the ith element in the list contains the calculated
      * acceleration for the ith body in the simulation.
-     * @param elapsedTime the time step of the simulation
      * @return the list of accelerations
      */
-    public List<Vector2d> calculateAccelerations(double elapsedTime) {
+    public List<Vector2d> calculateAccelerations() {
         
     	ArrayList<Vector2d> accelerations = new ArrayList<Vector2d>(this.bodies.size());
     	
