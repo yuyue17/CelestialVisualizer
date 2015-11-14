@@ -63,7 +63,9 @@ public class NBody {
      * @param elapsedTime the time step of the simulation.
      */
     public void update(double elapsedTime) {
-        throw new edu.grinnell.celestialvisualizer.UnimplementedException("NBody.update");
+        for (Body b : this.bodies) {
+        	b.update(elapsedTime, b.calculateAcceleration(this.bodies));
+        }
     }
     
     /**
