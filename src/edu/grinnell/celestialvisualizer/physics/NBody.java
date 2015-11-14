@@ -1,5 +1,6 @@
 package edu.grinnell.celestialvisualizer.physics;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -47,7 +48,14 @@ public class NBody {
      * @return the list of accelerations
      */
     public List<Vector2d> calculateAccelerations(double elapsedTime) {
-        throw new edu.grinnell.celestialvisualizer.UnimplementedException("NBody.calculateAcceleration");
+        
+    	ArrayList<Vector2d> accelerations = new ArrayList<Vector2d>(this.bodies.size());
+    	
+    	for (int i = 0; i < accelerations.size(); i++) {
+    		accelerations.set(i, this.bodies.get(i).calculateAcceleration(this.bodies));
+    	}
+    	
+    	return accelerations;
     }
 
     /**
